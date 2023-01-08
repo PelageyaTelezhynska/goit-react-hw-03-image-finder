@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Img, ImgLarge } from './ImageGalleryItem.styled';
 import { Modal } from 'components/Modal/Modal';
 
@@ -6,6 +7,14 @@ export class ImageGalleryItem extends Component {
   state = {
     showModal: false,
     picture: this.props.picture,
+  };
+
+  static propTypes = {
+    picture: PropTypes.shape({
+      tags: PropTypes.string.isRequired,
+      webformatURL: PropTypes.string.isRequired,
+      largeImageURL: PropTypes.string.isRequired,
+    }),
   };
 
   toggleModal = () => {

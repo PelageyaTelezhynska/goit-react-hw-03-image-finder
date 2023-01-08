@@ -1,4 +1,5 @@
 import { GoSearch } from 'react-icons/go';
+import PropTypes from 'prop-types';
 
 import {
   StyledSearchbar,
@@ -30,4 +31,8 @@ export const Searchbar = ({ onSubmit }) => {
       </SearchForm>
     </StyledSearchbar>
   );
+};
+
+Searchbar.propTypes = {
+  onSubmit: PropTypes.func,
 };
